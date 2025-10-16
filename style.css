@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: ivory;
+  text-align: center;
+}
+
+h1 {
+  margin: 1rem;
+  color: darkcyan;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+}
+
+.player {
+  margin: 1rem;
+  padding: 0.3rem;;
+  width: 100%;
+}
+
+label {
+  color: darkcyan;
+  margin: 0.5rem;
+}
+
+input {
+  margin: 0.5rem;
+  padding: 1rem;
+  border: 2px solid darkcyan;
+  border-radius: 2rem;
+  height: 2rem;
+  color: coral;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+
+.start, .reset {
+  margin: 1rem;
+  padding: 0.5rem;
+  width: 4rem;
+  font-size: 1rem;
+  background-color: darkcyan;
+  color: whitesmoke;
+  border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.reset{
+  background-color: indianred;
+}
+
+h2{
+  color: darkcyan;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+.game {
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3vmin;
+
+}
+
+.box {
+  height: 18vmin;
+  width: 18vmin;
+  border: none;
+  border-radius: 1rem;
+  font-size: 8vmin;
+  color: coral;
+  background-color: antiquewhite;
+  cursor: pointer;
+}
+
+.box:hover,
+.reset:hover, .start:hover {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+.box:disabled {
+  background-color: rgb(235, 214, 185);
+}
+
+.hide{
+  display: none;
+}
