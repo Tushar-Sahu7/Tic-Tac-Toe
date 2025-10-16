@@ -38,6 +38,7 @@ let p1, p2;
 
 //click to start the game
 startbtn.addEventListener("click", () => {
+  customCursor();
   p1 = player1.value || "Ronaldo";
   p2 = player2.value || "Messi";
   handlePlayerSign();
@@ -51,12 +52,22 @@ startbtn.addEventListener("click", () => {
   });
 });
 
+//adds custom cusor emoji according to the turn
+const customCursor = () =>{
+  const symbol = turn? "⭕" : "✖️";
+  document.querySelectorAll(".box").forEach((box) =>{
+    box.style.cursor = `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text y="24" font-size="24">${symbol}</text></svg>'), auto`;
+  });
+}
+
 //correctly write the sign & disable button
 //"O" == 1 & "X" == 0
 function handleBoxClick(e) {
   const box = e.target;
   box.innerText = turn ? "O" : "X";
+  box.style.color = turn? "coral" : "cornflowerblue"
   turn = !turn;
+  customCursor();
   box.disabled = true;
   moves++;
   if(moves > 2){
@@ -76,6 +87,7 @@ const checkWinner = () => {
       if (pos1Val === pos2Val && pos2Val === pos3Val) {
         winnerFound = true;
         showWinner(pos1Val == player1Sign ? p1 : p2);
+        disableAllButtons();
         setTimeout(() => {
           
           restart();
@@ -113,6 +125,11 @@ const showWinner = (winner) => {
       })();
 };
 
+//disable all the buttons
+const disableAllButtons = () => {boxes.forEach((box) =>{
+  box.disabled = true;
+})}
+
 //restart the game
 const restart = () => {
   turn = Math.round(Math.random());
@@ -120,6 +137,10 @@ const restart = () => {
   moves = 0;
   startbtn.classList.remove("hide");
   playerSignText.classList.add("hide");
+  document.querySelectorAll(".box").forEach((box) =>{
+    box.style.cursor = "default";
+  });
+  window.scrollTo(0,0);
   boxes.forEach((box) => {
     box.disabled = false;
     box.innerText = "";
