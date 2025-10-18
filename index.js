@@ -62,7 +62,7 @@ const customCursor = () =>{
 
 //correctly write the sign & disable button
 //"O" == 1 & "X" == 0
-function handleBoxClick(e) {
+const handleBoxClick = (e) => {
   const box = e.target;
   box.innerText = turn ? "O" : "X";
   box.style.color = turn? "coral" : "cornflowerblue"
@@ -137,11 +137,9 @@ const restart = () => {
   moves = 0;
   startbtn.classList.remove("hide");
   playerSignText.classList.add("hide");
-  document.querySelectorAll(".box").forEach((box) =>{
-    box.style.cursor = "default";
-  });
   window.scrollTo(0,0);
   boxes.forEach((box) => {
+    box.style.cursor = "default";
     box.disabled = false;
     box.innerText = "";
     box.removeEventListener("click", handleBoxClick);
