@@ -42,12 +42,13 @@ label {
   letter-spacing: 0.1rem;
 }
 
-#player2{
+#player2 {
   color: cornflowerblue;
 }
 
 
-.start, .reset {
+.start,
+.reset {
   margin: 1rem;
   padding: 0.5rem;
   width: 4rem;
@@ -59,11 +60,11 @@ label {
   cursor: pointer;
 }
 
-.reset{
+.reset {
   background-color: indianred;
 }
 
-h2{
+h2 {
   color: darkcyan;
   margin: 1rem;
   padding: 0.5rem;
@@ -92,16 +93,17 @@ h2{
 }
 
 .box:hover,
-.reset:hover, .start:hover {
+.reset:hover,
+.start:hover {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
-.box:disabled{
+.box:disabled {
   background-color: rgb(235, 214, 185);
   box-shadow: none;
   cursor: not-allowed;
 }
 
-.hide{
+.hide {
   display: none;
 }
